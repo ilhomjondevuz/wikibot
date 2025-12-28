@@ -1,10 +1,13 @@
 import logging
 
 from aiogram import Bot, Dispatcher, executor, types
+from environs import Env
 
 from wikitest import send_eiki
 
-API_TOKEN = '8497438608:AAEp67OfCAh3UUkzio2s6briy_zLw6bUp2w'
+env = Env()
+env.read_envfile('.env')
+API_TOKEN = env.str("API_TOKEN")
 
 
 # Configure logging
